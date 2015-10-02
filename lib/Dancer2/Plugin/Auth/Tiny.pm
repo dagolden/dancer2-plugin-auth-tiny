@@ -139,6 +139,14 @@ You may override any of these settings:
 * C<callback_key: return_url> -- defines the parameter key with the original request URL that is passed to the login route
 * C<passthrough: - user> -- a list of parameters that should be passed through to the login handler
 
+For example, in your application's F< config.yml >, you could change some of the default settings as such:
+
+    plugins:
+        Auth::Tiny:
+            login_route: /signin
+            logged_in_key: user_id
+            callback_key: next_url
+
 =head1 EXTENDING
 
 The class method C<extend> may be used to add (or override) authentication
